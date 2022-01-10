@@ -12,7 +12,6 @@ const client = new Client({
 });
 
 client.commands = new Collection();
-client.distube = new DisTube.default(client);
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
@@ -47,4 +46,9 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
+client.distube = new DisTube.default(client);
+client.distube
+	.on('playSong', (queue, song) => queue.textChannel.send(
+		` Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}`,
+	)),
 client.login(process.env.token);
