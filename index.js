@@ -94,13 +94,31 @@ client.distube = new DisTube.default(client);
 const { Client, Intents } = require('discord.js');
 =======
 const fs = require('fs');
+<<<<<<< HEAD
 const { Client, Collection, Intents } = require('discord.js');
 >>>>>>> e11c6e5 (base setup)
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+=======
+const DisTube = require('distube');
+const { Client, Collection } = require('discord.js');
+const client = new Client({
+	intents: [
+		'GUILDS',
+		'GUILD_VOICE_STATES',
+		'GUILD_MESSAGES',
+	],
+});
+>>>>>>> d7d876c (added basic play functionality)
 
 client.commands = new Collection();
+client.distube = new DisTube.default(client);
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	client.commands.set(command.data.name, command);
+}
 
 for (const file of eventFiles) {
 	const event = require(`./events/${file}`);
@@ -111,10 +129,22 @@ for (const file of eventFiles) {
 		client.on(event.name, (...args) => event.execute(...args));
 	}
 }
-for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
-	client.commands.set(command.data.name, command);
-}
+
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isCommand()) return;
+
+	const command = client.commands.get(interaction.commandName);
+
+	if (!command) return;
+
+	try {
+		await command.execute(interaction);
+	}
+	catch (error) {
+		console.error(error);
+		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+	}
+});
 
 >>>>>>> db2d3d3 (first commit)
 client.login(process.env.token);

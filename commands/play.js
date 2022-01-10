@@ -1,9 +1,13 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
+<<<<<<< HEAD
 const { MessageEmbed } = require('discord.js');
+=======
+>>>>>>> d7d876c (added basic play functionality)
 
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('play')
+<<<<<<< HEAD
 		.setDescription('Plays any video/song from YouTube!')
 		.addStringOption(option => option.setName('query').setDescription('Supports keywords and URL links.').setRequired(true)),
 
@@ -37,6 +41,14 @@ module.exports = {
 
 		await interaction.client.distube.play(
 			channel,
+=======
+		.setDescription('Plays a song')
+		.addStringOption(option => option.setName('song').setDescription('The song to play').setRequired(true)),
+	async execute(interaction) {
+		const query = interaction.options.getString('song').slice(0, 100);
+		interaction.client.distube.playVoiceChannel(
+			interaction.member.voice.channel,
+>>>>>>> d7d876c (added basic play functionality)
 			query,
 			{
 				textChannel: interaction.channel,
