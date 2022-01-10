@@ -153,6 +153,7 @@ client.on('interactionCreate', async interaction => {
 >>>>>>> db2d3d3 (first commit)
 =======
 client.distube = new DisTube.default(client);
+<<<<<<< HEAD
 client.distube
 <<<<<<< HEAD
 	.on('playSong', (queue, song) => queue.textChannel.send(
@@ -171,6 +172,32 @@ client.distube
 	queue.textChannel.send({ embeds: [nowPlaying] });
 	},
 );
+=======
+	client.distube
+		.on('playSong', (queue, song) => {
+		const nowPlaying = new MessageEmbed()
+		.setAuthor('Headphones | Now Playing', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+		.setColor('PURPLE')
+		.setThumbnail(song.thumbnail)
+		.addField('Song Name', `${song.name}`, false)
+		.addField('Duration', `${song.formattedDuration}`, false)
+		.addField('Requested By', `${song.user}`, false);
+		queue.textChannel.send({ embeds: [nowPlaying] });
+		},
+	);
+	client.distube
+		.on('addSong', (queue, song) => {
+		const nowPlaying = new MessageEmbed()
+		.setAuthor('Headphones | A song has been added to queue!', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+		.setColor('PURPLE')
+		.setThumbnail(song.thumbnail)
+		.addField('Song Name', `${song.name}`, false)
+		.addField('Duration', `${song.formattedDuration}`, false)
+		.addField('Requested By', `${song.user}`, false);
+		queue.textChannel.send({ embeds: [nowPlaying] });
+		},
+	);
+>>>>>>> 477328c (added pause, unpause, queue functionality)
 
 >>>>>>> 4a28369 (added embeds and expanded play functionality)
 client.login(process.env.token);
