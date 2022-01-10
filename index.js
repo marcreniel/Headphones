@@ -1,5 +1,6 @@
 require ('dotenv').config();
 
+<<<<<<< HEAD
 const fs = require('fs');
 const DisTube = require('distube');
 const { Client, Collection, MessageEmbed, Intents } = require('discord.js');
@@ -88,4 +89,13 @@ client.distube = new DisTube.default(client);
 		},
 	);
 	
+=======
+const { Client, Intents } = require('discord.js');
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+
+client.once('ready', () => {
+	console.log('Ready!');
+});
+
+>>>>>>> db2d3d3 (first commit)
 client.login(process.env.token);
