@@ -43,13 +43,16 @@ module.exports = {
 			channel,
 =======
 		.setDescription('Plays a song')
-		.addStringOption(option => option.setName('song').setDescription('The song to play').setRequired(true)),
+		.addStringOption(option => option.setName('song').setDescription('Supports').setRequired(true)),
 	async execute(interaction) {
-		const query = interaction.options.getString('song').slice(0, 100);
-		interaction.client.distube.playVoiceChannel(
+		await interaction.client.distube.playVoiceChannel(
 			interaction.member.voice.channel,
+<<<<<<< HEAD
 >>>>>>> d7d876c (added basic play functionality)
 			query,
+=======
+			interaction.options.getString('song').slice(0, 100),
+>>>>>>> b9c5db0 (added playSong event)
 			{
 				textChannel: interaction.channel,
 				member: interaction.member,

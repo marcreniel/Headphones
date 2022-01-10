@@ -4,7 +4,12 @@ unfinished
 Procfile
 config.json
 .env
+<<<<<<< HEAD
 =======
 .env
 config.json
 >>>>>>> db2d3d3 (first commit)
+=======
+config.json
+unfinished
+>>>>>>> b9c5db0 (added playSong event)

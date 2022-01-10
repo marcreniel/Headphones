@@ -111,7 +111,6 @@ const client = new Client({
 >>>>>>> d7d876c (added basic play functionality)
 
 client.commands = new Collection();
-client.distube = new DisTube.default(client);
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
@@ -146,5 +145,13 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
+<<<<<<< HEAD
 >>>>>>> db2d3d3 (first commit)
+=======
+client.distube = new DisTube.default(client);
+client.distube
+	.on('playSong', (queue, song) => queue.textChannel.send(
+		` Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}`,
+	)),
+>>>>>>> b9c5db0 (added playSong event)
 client.login(process.env.token);
