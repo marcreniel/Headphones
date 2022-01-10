@@ -2,7 +2,7 @@ require ('dotenv').config();
 
 const fs = require('fs');
 const DisTube = require('distube');
-const { Client, Collection } = require('discord.js');
+const { Client, Collection, MessageEmbed } = require('discord.js');
 const client = new Client({
 	intents: [
 		'GUILDS',
@@ -48,7 +48,16 @@ client.on('interactionCreate', async interaction => {
 
 client.distube = new DisTube.default(client);
 client.distube
-	.on('playSong', (queue, song) => queue.textChannel.send(
-		` Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}`,
-	)),
+	.on('playSong', (queue, song) => {
+	const nowPlaying = new MessageEmbed()
+	.setAuthor('Headphones | Now Playing', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+	.setColor('PURPLE')
+	.setThumbnail(song.thumbnail)
+	.addField('Song Name', `${song.name}`, false)
+	.addField('Duration', `${song.formattedDuration}`, false)
+	.addField('Requested By', `${song.user}`, false);
+	queue.textChannel.send({ embeds: [nowPlaying] });
+	},
+);
+
 client.login(process.env.token);
