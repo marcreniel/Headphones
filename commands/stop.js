@@ -28,7 +28,7 @@ module.exports = {
             if (interaction.member.guild.me.voice.channelId !== interaction.member.voice.channelId) {
 				const embedSameChannel = new MessageEmbed()
 				.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
-				.setDescription(':x: Please join the one I am currently in to use this command.')
+				.setDescription(':x: I am already in a voice channel! Please join the one I am currently in.')
 				.setColor('PURPLE');
 			return interaction.reply({ embeds: [embedSameChannel], ephemeral: true });
             }

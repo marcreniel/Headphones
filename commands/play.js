@@ -4,13 +4,13 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('play')
-		.setDescription('Plays any video/song from YouTube! Supports keywords and URL links.')
-		.addStringOption(option => option.setName('song').setRequired(true)),
+		.setDescription('Plays any video/song from YouTube!')
+		.addStringOption(option => option.setName('query').setDescription('Supports keywords and URL links.').setRequired(true)),
 
 	async execute(interaction) {
 		const channel = interaction.member.voice.channel;
 		const queue = await interaction.client.distube.getQueue(interaction);
-		const query = interaction.options.getString('song');
+		const query = interaction.options.getString('query');
 
 		if (!channel) {
 		const embedJoin = new MessageEmbed()
