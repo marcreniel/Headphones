@@ -20,7 +20,7 @@ module.exports = {
 		if (!queue) {
 			const noQueue = new MessageEmbed()
 			.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
-			.setDescription(':x: There is nothing currently playing!.')
+			.setDescription(':x: There is nothing currently playing!')
 			.setColor('PURPLE');
 			return interaction.reply({ embeds: [noQueue], ephemeral: true });
 		}
