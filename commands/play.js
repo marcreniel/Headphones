@@ -13,6 +13,7 @@ module.exports = {
 		.setName('play')
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		.setDescription('Plays any video/song from YouTube!')
 		.addStringOption(option => option.setName('query').setDescription('Supports keywords and URL links.').setRequired(true)),
 
@@ -55,12 +56,16 @@ module.exports = {
 		.addStringOption(option => option.setName('song').setDescription('Supports').setRequired(true)),
 =======
 		.addStringOption(option => option.setName('song').setRequired(true)),
+=======
+		.setDescription('Plays any video/song from YouTube!')
+		.addStringOption(option => option.setName('query').setDescription('Supports keywords and URL links.').setRequired(true)),
+>>>>>>> ed8d1c3 (added nowplaying and license)
 
 >>>>>>> 477328c (added pause, unpause, queue functionality)
 	async execute(interaction) {
 		const channel = interaction.member.voice.channel;
 		const queue = await interaction.client.distube.getQueue(interaction);
-		const query = interaction.options.getString('song');
+		const query = interaction.options.getString('query');
 
 		if (!channel) {
 		const embedJoin = new MessageEmbed()

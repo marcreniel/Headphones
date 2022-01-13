@@ -41,8 +41,12 @@ module.exports = {
 				.setDescription(':x: I am already in a voice channel! Please join the one I am currently in.')
 =======
 				.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+<<<<<<< HEAD
 				.setDescription(':x: Please join the one I am currently in to use this command.')
 >>>>>>> 477328c (added pause, unpause, queue functionality)
+=======
+				.setDescription(':x: I am already in a voice channel! Please join the one I am currently in.')
+>>>>>>> ed8d1c3 (added nowplaying and license)
 				.setColor('PURPLE');
 			return interaction.reply({ embeds: [embedSameChannel], ephemeral: true });
             }
