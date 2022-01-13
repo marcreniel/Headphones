@@ -145,7 +145,11 @@ client.on('interactionCreate', async interaction => {
 	}
 	catch (error) {
 		console.error(error);
-		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+		const noQueue = new MessageEmbed()
+		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+		.setDescription(':x: An error has occured. Please try again.')
+		.setColor('PURPLE');
+		await interaction.reply({ embeds: [noQueue], ephemeral: true });
 	}
 });
 

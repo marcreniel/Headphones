@@ -11,14 +11,22 @@ module.exports = {
 
 		if (!channel) {
 			const embedJoin = new MessageEmbed()
+<<<<<<< HEAD
 			.setAuthor({name:'Headphones', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
+=======
+			.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+>>>>>>> 6a9f22a (added jump, loop, skip, summon (as derived from distube docs))
 			.setDescription(':x: You must join a voice channel to use this command!')
 			.setColor('PURPLE');
             return interaction.reply({ embeds: [embedJoin], ephemeral: true });
         }
 		if (!queue) {
 			const noQueue = new MessageEmbed()
+<<<<<<< HEAD
 			.setAuthor({name:'Headphones', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
+=======
+			.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+>>>>>>> 6a9f22a (added jump, loop, skip, summon (as derived from distube docs))
 			.setDescription(':x: There is nothing currently playing!')
 			.setColor('PURPLE');
 			return interaction.reply({ embeds: [noQueue], ephemeral: true });
@@ -26,7 +34,11 @@ module.exports = {
 		if (queue) {
             if (interaction.member.guild.me.voice.channelId !== interaction.member.voice.channelId) {
 				const embedSameChannel = new MessageEmbed()
+<<<<<<< HEAD
 				.setAuthor({name:'Headphones', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
+=======
+				.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+>>>>>>> 6a9f22a (added jump, loop, skip, summon (as derived from distube docs))
 				.setDescription(':x: I am already in a voice channel! Please join the one I am currently in.')
 				.setColor('PURPLE');
 			return interaction.reply({ embeds: [embedSameChannel], ephemeral: true });
@@ -34,10 +46,17 @@ module.exports = {
         }
 
 		const skip = new MessageEmbed()
+<<<<<<< HEAD
 		.setAuthor({name:'Headphones', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
         .setDescription(`:track_next: <@${interaction.user.id}> Has skipped the current song.`)
         .setColor('PURPLE');
 		await queue.skip();
+=======
+		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+        .setDescription(`:fast_forward: <@${interaction.user.id}> Has skipped the current song.`)
+        .setColor('PURPLE');
+		await interaction.client.distube.skip(interaction);
+>>>>>>> 6a9f22a (added jump, loop, skip, summon (as derived from distube docs))
 		return interaction.reply({ embeds: [skip] });
 	},
 };

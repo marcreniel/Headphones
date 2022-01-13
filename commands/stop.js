@@ -28,8 +28,12 @@ module.exports = {
 			.setDescription(':x: There is nothing currently playing!')
 =======
 			.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+<<<<<<< HEAD
 			.setDescription(':x: There is nothing currently playing!.')
 >>>>>>> 477328c (added pause, unpause, queue functionality)
+=======
+			.setDescription(':x: There is nothing currently playing!')
+>>>>>>> 6a9f22a (added jump, loop, skip, summon (as derived from distube docs))
 			.setColor('PURPLE');
 			return interaction.reply({ embeds: [noQueue], ephemeral: true });
 		}
@@ -53,6 +57,7 @@ module.exports = {
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		const stopped = new MessageEmbed()
 		.setAuthor({name:'Headphones', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
         .setDescription(`:pause_button: <@${interaction.user.id}> Has stopped the music.`)
@@ -61,11 +66,18 @@ module.exports = {
 		return interaction.reply({ embeds: [stopped] });
 =======
 		const resume = new MessageEmbed()
+=======
+		const stopped = new MessageEmbed()
+>>>>>>> 6a9f22a (added jump, loop, skip, summon (as derived from distube docs))
 		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
         .setDescription(`:pause_button: <@${interaction.user.id}> Has stopped the music.`)
         .setColor('PURPLE');
 		await interaction.client.distube.stop(interaction);
+<<<<<<< HEAD
 		return interaction.reply({ embeds: [resume] });
 >>>>>>> 477328c (added pause, unpause, queue functionality)
+=======
+		return interaction.reply({ embeds: [stopped] });
+>>>>>>> 6a9f22a (added jump, loop, skip, summon (as derived from distube docs))
 	},
 };

@@ -28,8 +28,12 @@ module.exports = {
 			.setDescription(':x: There is nothing currently playing!')
 =======
 			.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+<<<<<<< HEAD
 			.setDescription(':x: There is nothing currently playing!.')
 >>>>>>> 477328c (added pause, unpause, queue functionality)
+=======
+			.setDescription(':x: There is nothing currently playing!')
+>>>>>>> 6a9f22a (added jump, loop, skip, summon (as derived from distube docs))
 			.setColor('PURPLE');
 			return interaction.reply({ embeds: [noQueue], ephemeral: true });
 		}
