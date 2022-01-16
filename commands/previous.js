@@ -3,13 +3,11 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('jump')
-		.setDescription('Jump to a specified song in the queue.')
-		.addIntegerOption(option => option.setName('position').setDescription('Choose the queue # to jump to.').setRequired(true)),
+		.setName('previous')
+		.setDescription('Goes back to the last song.'),
 	async execute(interaction) {
 		const channel = interaction.member.voice.channel;
 		const queue = await interaction.client.distube.getQueue(interaction);
-		const jumpto = interaction.options.getInteger('position');
 
 		if (!channel) {
 			const embedJoin = new MessageEmbed()
@@ -35,11 +33,11 @@ module.exports = {
             }
         }
 
-		const jump = new MessageEmbed()
+		const previous = new MessageEmbed()
 		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
-        .setDescription(`:fast_forward: <@${interaction.user.id}> Has jumped to queue position ${jumpto}.`)
+        .setDescription(`:track_previous: <@${interaction.user.id}> Has went back to the previous song.`)
         .setColor('PURPLE');
-		await queue.jump(jumpto);
-		return interaction.reply({ embeds: [jump] });
+        await queue.previous();
+		return interaction.reply({ embeds: [previous] });
 	},
 };

@@ -17,13 +17,15 @@ module.exports = {
 			return interaction.reply({ embeds: [noQueue], ephemeral: true });
 		}
 
+		const csong = queue.songs[0];
         const list = queue.songs
         .map((song, i) => `${i === 0 ? '**Now Playing:**' : `**${i}**.`} ${song.name} - \`${song.formattedDuration}\` - Requested by ${song.user}`)
         .join('\n');
         const queueList = new MessageEmbed()
 		.setAuthor('Headphones | Song Queue', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
         .setColor('PURPLE')
-        .setDescription(list, false);
+		.setThumbnail(csong.thumbnail)
+        .setDescription(list.slice(0, 1000) + '\n **... And more songs that cannot fit**', false);
         interaction.reply({ embeds: [queueList] });
     },
 };

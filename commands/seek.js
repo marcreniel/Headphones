@@ -3,13 +3,13 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('jump')
-		.setDescription('Jump to a specified song in the queue.')
-		.addIntegerOption(option => option.setName('position').setDescription('Choose the queue # to jump to.').setRequired(true)),
+		.setName('seek')
+		.setDescription('Go to a certain timestamp in the song.')
+		.addIntegerOption(option => option.setName('timestamp').setDescription('Provide the position (in seconds) to seek!').setRequired(true)),
 	async execute(interaction) {
 		const channel = interaction.member.voice.channel;
 		const queue = await interaction.client.distube.getQueue(interaction);
-		const jumpto = interaction.options.getInteger('position');
+		const seekto = interaction.options.getInteger('timestamp');
 
 		if (!channel) {
 			const embedJoin = new MessageEmbed()
@@ -35,11 +35,11 @@ module.exports = {
             }
         }
 
-		const jump = new MessageEmbed()
+		const previous = new MessageEmbed()
 		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
-        .setDescription(`:fast_forward: <@${interaction.user.id}> Has jumped to queue position ${jumpto}.`)
+        .setDescription(`:fast_forward: <@${interaction.user.id}> Has seeked ${seekto} seconds into the song.`)
         .setColor('PURPLE');
-		await queue.jump(jumpto);
-		return interaction.reply({ embeds: [jump] });
+        await queue.seek(seekto);
+		return interaction.reply({ embeds: [previous] });
 	},
 };

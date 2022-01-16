@@ -38,7 +38,7 @@ module.exports = {
 		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
         .setDescription(`:pause_button: <@${interaction.user.id}> Has stopped the music.`)
         .setColor('PURPLE');
-		await interaction.client.distube.stop(interaction);
+		await queue.stop();
 		return interaction.reply({ embeds: [stopped] });
 	},
 };

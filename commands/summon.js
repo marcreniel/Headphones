@@ -25,6 +25,7 @@ module.exports = {
 
 		const joinedChannel = new MessageEmbed()
 		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+		.setColor('PURPLE')
         .setDescription(`:white_check_mark: Joined ${interaction.guild.me.voice.channel}!`);
 		return interaction.reply({ embeds: [joinedChannel] });
 	},

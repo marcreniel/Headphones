@@ -36,9 +36,9 @@ module.exports = {
 
 		const resume = new MessageEmbed()
 		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
-        .setDescription(`:pause_button: <@${interaction.user.id}> Has resumed the music.`)
+        .setDescription(`:arrow_forward: <@${interaction.user.id}> Has resumed the music.`)
         .setColor('PURPLE');
-		await interaction.client.distube.resume(interaction);
+		await queue.resume();
 		return interaction.reply({ embeds: [resume] });
 	},
 };

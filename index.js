@@ -65,15 +65,26 @@ client.distube = new DisTube.default(client);
 	);
 	client.distube
 		.on('addSong', (queue, song) => {
-		const nowPlaying = new MessageEmbed()
+		const addedSong = new MessageEmbed()
 		.setAuthor('Headphones | A song has been added to queue!', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
 		.setColor('PURPLE')
 		.setThumbnail(song.thumbnail)
 		.addField('Song Name', `${song.name}`, false)
 		.addField('Duration', `${song.formattedDuration}`, false)
 		.addField('Requested By', `${song.user}`, false);
-		queue.textChannel.send({ embeds: [nowPlaying] });
+		queue.textChannel.send({ embeds: [addedSong] });
 		},
 	);
-
+	client.distube
+		.on('addList', (queue, playlist) => {
+		const addedList = new MessageEmbed()
+		.setAuthor('Headphones | A playlist has been added to queue!', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+		.setColor('PURPLE')
+		.setThumbnail(playlist.thumbnail)
+		.addField('Song Name', `${playlist.name}`, false)
+		.addField('Duration', `${playlist.formattedDuration}`, false)
+		.addField('Requested By', `${playlist.user}`, false);
+		queue.textChannel.send({ embeds: [addedList] });
+		},
+	);
 client.login(process.env.token);

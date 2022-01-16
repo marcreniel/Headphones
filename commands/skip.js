@@ -35,9 +35,9 @@ module.exports = {
 
 		const skip = new MessageEmbed()
 		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
-        .setDescription(`:fast_forward: <@${interaction.user.id}> Has skipped the current song.`)
+        .setDescription(`:track_next: <@${interaction.user.id}> Has skipped the current song.`)
         .setColor('PURPLE');
-		await interaction.client.distube.skip(interaction);
+		await queue.skip();
 		return interaction.reply({ embeds: [skip] });
 	},
 };
