@@ -14,8 +14,9 @@ for (const file of commandFiles) {
 	console.log(file, '☑️');
 }
 
+
 const rest = new REST({ version: '9' }).setToken(process.env.token);
 
-rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
+rest.put(Routes.applicationGuildCommands(clientId, guildId), Routes.applicationCommands(clientId), { body: commands })
 	.then(() => console.log('Headphones has registered application commands successfully.'))
 	.catch(console.error);
