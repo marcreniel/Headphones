@@ -17,6 +17,9 @@ for (const file of commandFiles) {
 
 const rest = new REST({ version: '9' }).setToken(process.env.token);
 
-rest.put(Routes.applicationGuildCommands(clientId, guildId), Routes.applicationCommands(clientId), { body: commands })
-	.then(() => console.log('Headphones has registered application commands successfully.'))
+rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
+	.then(() => console.log('Headphones has registered local guild application commands successfully.'))
+	.catch(console.error);
+rest.put(Routes.applicationCommands(clientId), { body: commands })
+	.then(() => console.log('Headphones has registered global application commands successfully.'))
 	.catch(console.error);
