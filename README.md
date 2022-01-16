@@ -1,5 +1,5 @@
 # Headphones | A Discord Music Bot
-**A bot will be availble soon once development is finished.**
+**Invite the bot [to your server!](https://discord.com/api/oauth2/authorize?client_id=908171292249817099&permissions=139623459904&scope=bot%20applications.commands)**
 
 After Rythym's shutdown, I coded a personal music bot months ago that operated on various servers. However, as it's old codebase is aging (and breaking!), I decided to rewrite the bot making substantial improvements and open-sourcing the code.
 
@@ -34,7 +34,9 @@ Create a ``.env`` file in the directory, then copy, paste, and modify this code 
 token = Your Token Here
 ```
 
-Run the application using ```node .```
+Register the slash commands using ```node handlers/commandHandler.js```
+
+Finally, run the application using ```node .```
 
 ## Credits
 - Created by [**Marc Bernardino**](https://github.com/imEdra)
