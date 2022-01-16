@@ -1,5 +1,6 @@
 node_modules
 <<<<<<< HEAD
+<<<<<<< HEAD
 unfinished
 Procfile
 config.json
@@ -18,3 +19,9 @@ unfinished
 unfinished
 Procfile
 >>>>>>> 3e1a15d (make it better)
+=======
+unfinished
+Procfile
+config.json
+.env
+>>>>>>> 7371b88 (production build)
