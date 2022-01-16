@@ -57,8 +57,12 @@ module.exports = {
 		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
         .setDescription(`:fast_forward: <@${interaction.user.id}> Has jumped to queue position ${jumpto}.`)
         .setColor('PURPLE');
+<<<<<<< HEAD
 		await interaction.client.distube.jump(interaction, jumpto);
 >>>>>>> 6a9f22a (added jump, loop, skip, summon (as derived from distube docs))
+=======
+		await queue.jump(jumpto);
+>>>>>>> 4023400 (final dev build: added volume, seek, previous, full playlist support)
 		return interaction.reply({ embeds: [jump] });
 	},
 };

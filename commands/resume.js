@@ -64,10 +64,14 @@ module.exports = {
 		await queue.resume();
 =======
 		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
-        .setDescription(`:pause_button: <@${interaction.user.id}> Has resumed the music.`)
+        .setDescription(`:arrow_forward: <@${interaction.user.id}> Has resumed the music.`)
         .setColor('PURPLE');
+<<<<<<< HEAD
 		await interaction.client.distube.resume(interaction);
 >>>>>>> 477328c (added pause, unpause, queue functionality)
+=======
+		await queue.resume();
+>>>>>>> 4023400 (final dev build: added volume, seek, previous, full playlist support)
 		return interaction.reply({ embeds: [resume] });
 	},
 };

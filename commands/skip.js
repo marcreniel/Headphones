@@ -53,10 +53,14 @@ module.exports = {
 		await queue.skip();
 =======
 		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
-        .setDescription(`:fast_forward: <@${interaction.user.id}> Has skipped the current song.`)
+        .setDescription(`:track_next: <@${interaction.user.id}> Has skipped the current song.`)
         .setColor('PURPLE');
+<<<<<<< HEAD
 		await interaction.client.distube.skip(interaction);
 >>>>>>> 6a9f22a (added jump, loop, skip, summon (as derived from distube docs))
+=======
+		await queue.skip();
+>>>>>>> 4023400 (final dev build: added volume, seek, previous, full playlist support)
 		return interaction.reply({ embeds: [skip] });
 	},
 };

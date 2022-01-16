@@ -72,11 +72,15 @@ module.exports = {
 		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
         .setDescription(`:pause_button: <@${interaction.user.id}> Has stopped the music.`)
         .setColor('PURPLE');
+<<<<<<< HEAD
 		await interaction.client.distube.stop(interaction);
 <<<<<<< HEAD
 		return interaction.reply({ embeds: [resume] });
 >>>>>>> 477328c (added pause, unpause, queue functionality)
 =======
+=======
+		await queue.stop();
+>>>>>>> 4023400 (final dev build: added volume, seek, previous, full playlist support)
 		return interaction.reply({ embeds: [stopped] });
 >>>>>>> 6a9f22a (added jump, loop, skip, summon (as derived from distube docs))
 	},

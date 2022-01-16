@@ -33,7 +33,11 @@ module.exports = {
 		.setColor('PURPLE')
 =======
 		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+<<<<<<< HEAD
 >>>>>>> 6a9f22a (added jump, loop, skip, summon (as derived from distube docs))
+=======
+		.setColor('PURPLE')
+>>>>>>> 4023400 (final dev build: added volume, seek, previous, full playlist support)
         .setDescription(`:white_check_mark: Joined ${interaction.guild.me.voice.channel}!`);
 		return interaction.reply({ embeds: [joinedChannel] });
 	},

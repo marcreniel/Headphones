@@ -22,9 +22,13 @@ module.exports = {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		const csong = queue.songs[0];
 =======
 >>>>>>> 477328c (added pause, unpause, queue functionality)
+=======
+		const csong = queue.songs[0];
+>>>>>>> 4023400 (final dev build: added volume, seek, previous, full playlist support)
         const list = queue.songs
         .map((song, i) => `${i === 0 ? '**Now Playing:**' : `**${i}**.`} ${song.name} - \`${song.formattedDuration}\` - Requested by ${song.user}`)
         .join('\n');
@@ -37,8 +41,13 @@ module.exports = {
 =======
 		.setAuthor('Headphones | Song Queue', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
         .setColor('PURPLE')
+<<<<<<< HEAD
         .setDescription(list, false);
 >>>>>>> 477328c (added pause, unpause, queue functionality)
+=======
+		.setThumbnail(csong.thumbnail)
+        .setDescription(list.slice(0, 1000) + '\n **... And more songs that cannot fit**', false);
+>>>>>>> 4023400 (final dev build: added volume, seek, previous, full playlist support)
         interaction.reply({ embeds: [queueList] });
     },
 };

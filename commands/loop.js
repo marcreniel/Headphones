@@ -64,15 +64,15 @@ module.exports = {
 		.setAuthor({name:'Headphones', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
 =======
 		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
-        .setDescription(`:fast_forward: <@${interaction.user.id}> Has toggled loop. The current song will continuously play.`)
+        .setDescription(`:repeat_one: <@${interaction.user.id}> Has toggled loop. The current song will continuously play.`)
         .setColor('PURPLE');
 		const loopqueue = new MessageEmbed()
 		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
-        .setDescription(`:fast_forward: <@${interaction.user.id}> Has toggled loop queue. The queue will continuously play.`)
+        .setDescription(`:repeat: <@${interaction.user.id}> Has toggled loop queue. The queue will continuously play.`)
         .setColor('PURPLE');
 		const loopoff = new MessageEmbed()
 		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
-        .setDescription(`:fast_forward: <@${interaction.user.id}> Has untoggled loop.`)
+        .setDescription(`:repeat: <@${interaction.user.id}> Has untoggled loop.`)
         .setColor('PURPLE');
 		const error = new MessageEmbed()
 		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')

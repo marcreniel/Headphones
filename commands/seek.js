@@ -13,14 +13,22 @@ module.exports = {
 
 		if (!channel) {
 			const embedJoin = new MessageEmbed()
+<<<<<<< HEAD
 			.setAuthor({name:'Headphones', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
+=======
+			.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+>>>>>>> 4023400 (final dev build: added volume, seek, previous, full playlist support)
 			.setDescription(':x: You must join a voice channel to use this command!')
 			.setColor('PURPLE');
             return interaction.reply({ embeds: [embedJoin], ephemeral: true });
         }
 		if (!queue) {
 			const noQueue = new MessageEmbed()
+<<<<<<< HEAD
 			.setAuthor({name:'Headphones', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
+=======
+			.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+>>>>>>> 4023400 (final dev build: added volume, seek, previous, full playlist support)
 			.setDescription(':x: There is nothing currently playing!')
 			.setColor('PURPLE');
 			return interaction.reply({ embeds: [noQueue], ephemeral: true });
@@ -28,7 +36,11 @@ module.exports = {
 		if (queue) {
             if (interaction.member.guild.me.voice.channelId !== interaction.member.voice.channelId) {
 				const embedSameChannel = new MessageEmbed()
+<<<<<<< HEAD
 				.setAuthor({name:'Headphones', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
+=======
+				.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+>>>>>>> 4023400 (final dev build: added volume, seek, previous, full playlist support)
 				.setDescription(':x: I am already in a voice channel! Please join the one I am currently in.')
 				.setColor('PURPLE');
 			return interaction.reply({ embeds: [embedSameChannel], ephemeral: true });
@@ -36,7 +48,11 @@ module.exports = {
         }
 
 		const previous = new MessageEmbed()
+<<<<<<< HEAD
 		.setAuthor({name:'Headphones', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
+=======
+		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+>>>>>>> 4023400 (final dev build: added volume, seek, previous, full playlist support)
         .setDescription(`:fast_forward: <@${interaction.user.id}> Has seeked ${seekto} seconds into the song.`)
         .setColor('PURPLE');
         await queue.seek(seekto);
