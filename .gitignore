@@ -8,8 +8,13 @@ config.json
 =======
 .env
 config.json
+<<<<<<< HEAD
 >>>>>>> db2d3d3 (first commit)
 =======
 config.json
 unfinished
 >>>>>>> b9c5db0 (added playSong event)
+=======
+unfinished
+Procfile
+>>>>>>> 3e1a15d (make it better)
