@@ -12,14 +12,14 @@ module.exports = {
 
         if (!queue) {
 			const noQueue = new MessageEmbed()
-			.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+			.setAuthor({name:'Headphones', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
 			.setDescription(':x: There is nothing currently playing!')
 			.setColor('PURPLE');
 			return interaction.reply({ embeds: [noQueue], ephemeral: true });
 		}
 
         const nowPlaying = new MessageEmbed()
-		.setAuthor('Headphones | Now Playing', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+		.setAuthor({name:'Headphones | Now Playing', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
 		.setColor('PURPLE')
 		.setThumbnail(currentsong.thumbnail)
 		.addField('Song Name', `${currentsong.name}`, false)
