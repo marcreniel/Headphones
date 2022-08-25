@@ -1,27 +1,6 @@
 node_modules
-<<<<<<< HEAD
-<<<<<<< HEAD
 unfinished
 Procfile
 config.json
+.eslintrc.json
 .env
-<<<<<<< HEAD
-=======
-.env
-config.json
-<<<<<<< HEAD
->>>>>>> db2d3d3 (first commit)
-=======
-config.json
-unfinished
->>>>>>> b9c5db0 (added playSong event)
-=======
-unfinished
-Procfile
->>>>>>> 3e1a15d (make it better)
-=======
-unfinished
-Procfile
-config.json
-.env
->>>>>>> 7371b88 (production build)
