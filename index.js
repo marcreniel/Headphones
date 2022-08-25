@@ -2,8 +2,19 @@ require ('dotenv').config();
 
 const fs = require('fs');
 const DisTube = require('distube');
+<<<<<<< HEAD
 const { Client, Collection, MessageEmbed, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_VOICE_STATES, Intents.FLAGS.GUILD_MESSAGES] });
+=======
+const { Client, Collection, MessageEmbed } = require('discord.js');
+const client = new Client({
+	intents: [
+		'GUILDS',
+		'GUILD_VOICE_STATES',
+		'GUILD_MESSAGES',
+	],
+});
+>>>>>>> b873d6338a962556d52789cebb40f00452e1cc6e
 
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -37,7 +48,11 @@ client.on('interactionCreate', async interaction => {
 	catch (error) {
 		console.error(error);
 		const noQueue = new MessageEmbed()
+<<<<<<< HEAD
 		.setAuthor({name:'Headphones', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
+=======
+		.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+>>>>>>> b873d6338a962556d52789cebb40f00452e1cc6e
 		.setDescription(':x: An error has occured. Please try again.')
 		.setColor('PURPLE');
 		await interaction.reply({ embeds: [noQueue], ephemeral: true });
@@ -48,6 +63,7 @@ client.distube = new DisTube.default(client);
 	client.distube
 		.on('playSong', (queue, song) => {
 		const nowPlaying = new MessageEmbed()
+<<<<<<< HEAD
 		.setAuthor({name:'Headphones | Now Playing', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
 		.setColor('PURPLE')
 		.setThumbnail(song.thumbnail)
@@ -56,12 +72,21 @@ client.distube = new DisTube.default(client);
 			{name:'Duration', value:`${song.formattedDuration}`, inline:false},
 			{name:'Requested By', value:`${song.user}`, inline:false},
 		);
+=======
+		.setAuthor('Headphones | Now Playing', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+		.setColor('PURPLE')
+		.setThumbnail(song.thumbnail)
+		.addField('Song Name', `${song.name}`, false)
+		.addField('Duration', `${song.formattedDuration}`, false)
+		.addField('Requested By', `${song.user}`, false);
+>>>>>>> b873d6338a962556d52789cebb40f00452e1cc6e
 		queue.textChannel.send({ embeds: [nowPlaying] });
 		},
 	);
 	client.distube
 		.on('addSong', (queue, song) => {
 		const addedSong = new MessageEmbed()
+<<<<<<< HEAD
 		.setAuthor({name:'Headphones | A song has been added to the queue!', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
 		.setColor('PURPLE')
 		.setThumbnail(song.thumbnail)
@@ -70,12 +95,21 @@ client.distube = new DisTube.default(client);
 			{name:'Duration', value:`${song.formattedDuration}`, inline:false},
 			{name:'Requested By', value:`${song.user}`, inline:false},
 		);
+=======
+		.setAuthor('Headphones | A song has been added to queue!', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+		.setColor('PURPLE')
+		.setThumbnail(song.thumbnail)
+		.addField('Song Name', `${song.name}`, false)
+		.addField('Duration', `${song.formattedDuration}`, false)
+		.addField('Requested By', `${song.user}`, false);
+>>>>>>> b873d6338a962556d52789cebb40f00452e1cc6e
 		queue.textChannel.send({ embeds: [addedSong] });
 		},
 	);
 	client.distube
 		.on('addList', (queue, playlist) => {
 		const addedList = new MessageEmbed()
+<<<<<<< HEAD
 		.setAuthor({name:'Headphones | A playlist has been added to the queue!', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
 		.setColor('PURPLE')
 		.setThumbnail(playlist.thumbnail)
@@ -88,4 +122,15 @@ client.distube = new DisTube.default(client);
 		},
 	);
 	
+=======
+		.setAuthor('Headphones | A playlist has been added to queue!', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+		.setColor('PURPLE')
+		.setThumbnail(playlist.thumbnail)
+		.addField('Song Name', `${playlist.name}`, false)
+		.addField('Duration', `${playlist.formattedDuration}`, false)
+		.addField('Requested By', `${playlist.user}`, false);
+		queue.textChannel.send({ embeds: [addedList] });
+		},
+	);
+>>>>>>> b873d6338a962556d52789cebb40f00452e1cc6e
 client.login(process.env.token);
