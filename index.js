@@ -51,9 +51,11 @@ client.distube = new DisTube.default(client);
 		.setAuthor({name:'Headphones | Now Playing', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
 		.setColor('PURPLE')
 		.setThumbnail(song.thumbnail)
-		.addField('Song Name', `${song.name}`, false)
-		.addField('Duration', `${song.formattedDuration}`, false)
-		.addField('Requested By', `${song.user}`, false);
+		.addFields(
+			{name: 'Song Name', value:`${song.name}`, inline:false},
+			{name:'Duration', value:`${song.formattedDuration}`, inline:false},
+			{name:'Requested By', value:`${song.user}`, inline:false},
+		);
 		queue.textChannel.send({ embeds: [nowPlaying] });
 		},
 	);
@@ -63,9 +65,11 @@ client.distube = new DisTube.default(client);
 		.setAuthor({name:'Headphones | A song has been added to the queue!', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
 		.setColor('PURPLE')
 		.setThumbnail(song.thumbnail)
-		.addField('Song Name', `${song.name}`, false)
-		.addField('Duration', `${song.formattedDuration}`, false)
-		.addField('Requested By', `${song.user}`, false);
+		.addFields(
+			{name: 'Song Name', value:`${song.name}`, inline:false},
+			{name:'Duration', value:`${song.formattedDuration}`, inline:false},
+			{name:'Requested By', value:`${song.user}`, inline:false},
+		);
 		queue.textChannel.send({ embeds: [addedSong] });
 		},
 	);
@@ -75,9 +79,11 @@ client.distube = new DisTube.default(client);
 		.setAuthor({name:'Headphones | A playlist has been added to the queue!', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
 		.setColor('PURPLE')
 		.setThumbnail(playlist.thumbnail)
-		.addField('Song Name', `${playlist.name}`, false)
-		.addField('Duration', `${playlist.formattedDuration}`, false)
-		.addField('Requested By', `${playlist.user}`, false);
+		.addFields(
+			{name: 'Song Name', value:`${playlist.name}`, inline:false},
+			{name:'Duration', value:`${playlist.formattedDuration}`, inline:false},
+			{name:'Requested By', value:`${playlist.user}`, inline:false},
+		);
 		queue.textChannel.send({ embeds: [addedList] });
 		},
 	);

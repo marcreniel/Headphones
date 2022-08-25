@@ -22,10 +22,12 @@ module.exports = {
 		.setAuthor({name:'Headphones | Now Playing', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
 		.setColor('PURPLE')
 		.setThumbnail(currentsong.thumbnail)
-		.addField('Song Name', `${currentsong.name}`, false)
-		.addField('Duration', `${currentsong.formattedDuration}`, false)
-		.addField('Requested By', `${currentsong.user}`, false)
-        .addField('Playing In', `${interaction.guild.me.voice.channel}`, false);
+		.addFields(
+			{name:'Song Name', value:`${currentsong.name}`, inline:false},
+			{name:'Duration', value:`${currentsong.formattedDuration}`, inline:false},
+			{name:'Requested By', value:`${currentsong.user}`, inline:false},
+			{name:'Playing In', value:`${interaction.guild.me.voice.channel}`, inline:false},
+		);
         interaction.reply({ embeds: [nowPlaying] });
     },
 };
