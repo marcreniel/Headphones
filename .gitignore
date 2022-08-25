@@ -2,4 +2,9 @@ node_modules
 unfinished
 Procfile
 config.json
+<<<<<<< HEAD
+.eslintrc.json
 .env
+=======
+.env
+>>>>>>> b873d6338a962556d52789cebb40f00452e1cc6e

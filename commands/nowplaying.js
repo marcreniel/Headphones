@@ -12,13 +12,18 @@ module.exports = {
 
         if (!queue) {
 			const noQueue = new MessageEmbed()
+<<<<<<< HEAD
 			.setAuthor({name:'Headphones', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
+=======
+			.setAuthor('Headphones', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+>>>>>>> b873d6338a962556d52789cebb40f00452e1cc6e
 			.setDescription(':x: There is nothing currently playing!')
 			.setColor('PURPLE');
 			return interaction.reply({ embeds: [noQueue], ephemeral: true });
 		}
 
         const nowPlaying = new MessageEmbed()
+<<<<<<< HEAD
 		.setAuthor({name:'Headphones | Now Playing', iconURL: 'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
 		.setColor('PURPLE')
 		.setThumbnail(currentsong.thumbnail)
@@ -28,6 +33,15 @@ module.exports = {
 			{name:'Requested By', value:`${currentsong.user}`, inline:false},
 			{name:'Playing In', value:`${interaction.guild.me.voice.channel}`, inline:false},
 		);
+=======
+		.setAuthor('Headphones | Now Playing', 'https://media.discordapp.net/attachments/887886467215544333/887886502833569812/HPL.png?width=671&height=671')
+		.setColor('PURPLE')
+		.setThumbnail(currentsong.thumbnail)
+		.addField('Song Name', `${currentsong.name}`, false)
+		.addField('Duration', `${currentsong.formattedDuration}`, false)
+		.addField('Requested By', `${currentsong.user}`, false)
+        .addField('Playing In', `${interaction.guild.me.voice.channel}`, false);
+>>>>>>> b873d6338a962556d52789cebb40f00452e1cc6e
         interaction.reply({ embeds: [nowPlaying] });
     },
 };
