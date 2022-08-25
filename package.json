@@ -1,17 +1,11 @@
 {
   "name": "headphones",
-<<<<<<< HEAD
   "version": "4.0.0",
   "description": "A simple discord music bot",
-=======
-  "version": "3.0.0",
-  "description": "A simple music bot for Discord.",
->>>>>>> b873d6338a962556d52789cebb40f00452e1cc6e
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-<<<<<<< HEAD
   "author": "Marc Reniel Bernardino",
   "license": "MIT",
   "dependencies": {
@@ -25,25 +19,5 @@
     "dotenv": "^16.0.1",
     "ffmpeg-static": "^4.4.1",
     "libsodium-wrappers": "^0.7.10"
-=======
-  "author": "Marc Bernardino",
-  "license": "MIT",
-  "engines": { "node" : ">=0.16" },
-  "engineStrict" : true,
-  "dependencies": {
-    "@discordjs/builders": "^0.11.0",
-    "@discordjs/opus": "^0.7.0",
-    "@discordjs/rest": "^0.2.0-canary.0",
-    "@discordjs/voice": "^0.7.5",
-    "discord-api-types": "^0.26.1",
-    "discord.js": "^13.5.1",
-    "distube": "^3.0.7",
-    "dotenv": "^10.0.0",
-    "ffmpeg-static": "^4.4.1",
-    "libsodium-wrappers": "^0.7.9"
-  },
-  "devDependencies": {
-    "eslint": "^8.6.0"
->>>>>>> b873d6338a962556d52789cebb40f00452e1cc6e
   }
 }
