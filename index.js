@@ -58,9 +58,12 @@ client.distube = new DisTube.default(client, {plugins: [new SpotifyPlugin()],});
 		.setAuthor({name:'Headphones | Now Playing', iconURL:'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
 		.setColor('PURPLE')
 		.setThumbnail(song.thumbnail)
-		.addField('Song Name', `${song.name}`, false)
-		.addField('Duration', `${song.formattedDuration}`, false)
-		.addField('Requested By', `${song.user}`, false);
+		.addFields(
+			{name:'Song Name', value:`${currentsong.name}`, inline:false},
+			{name:'Duration', value:`${currentsong.formattedDuration}`, inline:false},
+			{name:'Requested By', value:`${currentsong.user}`, inline:false},
+			{name:'Playing In', value:`${interaction.guild.me.voice.channel}`, inline:false},
+		);
 		queue.textChannel.send({ embeds: [nowPlaying] });
 		},
 	);
@@ -70,9 +73,12 @@ client.distube = new DisTube.default(client, {plugins: [new SpotifyPlugin()],});
 		.setAuthor({name:'Headphones | A song has been added to queue!', iconURL:'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
 		.setColor('PURPLE')
 		.setThumbnail(song.thumbnail)
-		.addField('Song Name', `${song.name}`, false)
-		.addField('Duration', `${song.formattedDuration}`, false)
-		.addField('Requested By', `${song.user}`, false);
+		.addFields(
+			{name:'Song Name', value:`${currentsong.name}`, inline:false},
+			{name:'Duration', value:`${currentsong.formattedDuration}`, inline:false},
+			{name:'Requested By', value:`${currentsong.user}`, inline:false},
+			{name:'Playing In', value:`${interaction.guild.me.voice.channel}`, inline:false},
+		);
 		queue.textChannel.send({ embeds: [addedSong] });
 		},
 	);
@@ -82,9 +88,12 @@ client.distube = new DisTube.default(client, {plugins: [new SpotifyPlugin()],});
 		.setAuthor({name:'Headphones | A playlist has been added to queue!', iconURL:'https://media.discordapp.net/attachments/929899694560280627/990819878535589939/Headphonesv4Logo.png'})
 		.setColor('PURPLE')
 		.setThumbnail(playlist.thumbnail)
-		.addField('Song Name', `${playlist.name}`, false)
-		.addField('Duration', `${playlist.formattedDuration}`, false)
-		.addField('Requested By', `${playlist.user}`, false);
+		.addFields(
+			{name:'Song Name', value:`${currentsong.name}`, inline:false},
+			{name:'Duration', value:`${currentsong.formattedDuration}`, inline:false},
+			{name:'Requested By', value:`${currentsong.user}`, inline:false},
+			{name:'Playing In', value:`${interaction.guild.me.voice.channel}`, inline:false},
+		);
 		queue.textChannel.send({ embeds: [addedList] });
 		},
 	);
