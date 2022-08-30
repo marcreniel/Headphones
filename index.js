@@ -3,6 +3,7 @@ require ('dotenv').config();
 const fs = require('fs');
 const DisTube = require('distube');
 const { SpotifyPlugin } = require("@distube/spotify");
+const { YtDlpPlugin } = require("@distube/yt-dlp");
 const { Client, Collection, MessageEmbed } = require('discord.js');
 const client = new Client({
 	intents: [
@@ -51,7 +52,10 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
-client.distube = new DisTube.default(client, {plugins: [new SpotifyPlugin()],});
+client.distube = new DisTube.default(client, {
+	plugins: [new YtDlpPlugin({ update: true }), new SpotifyPlugin()],
+});
+
 	client.distube
 		.on('playSong', (queue, song) => {
 		const nowPlaying = new MessageEmbed()
