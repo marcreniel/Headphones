@@ -54,6 +54,7 @@ client.on('interactionCreate', async interaction => {
 
 client.distube = new DisTube.default(client, {
 	plugins: [new YtDlpPlugin({ update: true }), new SpotifyPlugin()],
+	youtubeDL: false,
 });
 
 	client.distube
