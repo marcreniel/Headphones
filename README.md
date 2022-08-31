@@ -1,3 +1,3 @@
-# Headphones v4
-The next leap in my own simple discord music bot.
+# Headphones 
+A simple discord music bot with support for Youtube, Spotify, Soundcloud, and more.
 
